@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '../../../environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,5 +11,11 @@ import { environment } from '../../../environment';
 export class NavbarComponent {
   version: string = environment.version;
 
-  constructor() {}
+  constructor(
+    private readonly route: ActivatedRoute
+  ) {}
+
+  get currentRoute(): string {
+    return this.route.firstChild?.snapshot.url[0].path || '';
+  }
 }
