@@ -1,6 +1,6 @@
 {
   "productName": "open-opl-toolbox",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "description": "Cross-platform PS2 game manager for Open PS2 Loader (OPL)",
   "author": {
     "name": "Stefan Adrian Nita",
