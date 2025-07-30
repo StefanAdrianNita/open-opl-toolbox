@@ -1,12 +1,24 @@
 {
-  "name": "open-opl-toolbox",
-  "version": "0.0.0",
+  "productName": "open-opl-toolbox",
+  "version": "0.0.1",
+  "description": "Cross-platform PS2 game manager for Open PS2 Loader (OPL)",
+  "author": {
+    "name": "Stefan Adrian Nita",
+    "email": "stefanadrian.nita@icloud.com"
+  },
+  "license": "GPL-3.0-only",
+  "main": "dist/index.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "concurrently \"npm run build-electron\" \"npm run serve-angular\" \"npm run wait-for-serve-angular && electron-forge start\"",
+    "serve-angular": "ng serve open-opl-toolbox",
+    "wait-for-serve-angular": "wait-on http://localhost:4200",
+    "build-angular": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build-electron": "tsc --project projects/electron/tsconfig.json",
+    "package": "npm run build-electron && npm run build-angular && electron-forge package",
+    "make": "npm run build-electron && npm run build-angular && electron-forge make"
   },
   "private": true,
   "dependencies": {
@@ -18,20 +30,33 @@
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
+    "electron-squirrel-startup": "^1.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^19.2.15",
     "@angular/cli": "^19.0.2",
     "@angular/compiler-cli": "^19.0.0",
+    "@electron-forge/cli": "^7.8.2",
+    "@electron-forge/maker-deb": "^7.8.2",
+    "@electron-forge/maker-rpm": "^7.8.2",
+    "@electron-forge/maker-squirrel": "^7.8.2",
+    "@electron-forge/maker-zip": "^7.8.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.8.2",
     "@types/jasmine": "~5.1.0",
+    "concurrently": "^9.2.0",
+    "electron": "^37.2.4",
     "jasmine-core": "~5.4.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.6.2"
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.6.2",
+    "wait-on": "^8.0.4"
   }
 }
