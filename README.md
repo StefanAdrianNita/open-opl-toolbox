@@ -1,44 +1,59 @@
-# OpenOPL Toolbox
+# OpenOplToolbox
 
-<div align="center" style="margin-bottom: 24px;">
-    <img src="./projects/open-opl-toolbox/assets/logo.svg" alt="OpenOPL Toolbox Logo" width="1000">
-</div>
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
 
+## Development server
 
-**Cross-platform PS2 game manager for Open PS2 Loader (OPL)**  
-OpenOPL Toolbox is a modern, open-source alternative to OPL Manager, built with Electron and designed to run on **Windows, macOS, and Linux**. Easily manage your OPL-compatible game library without relying on Wine or other workarounds.
+To start a local development server, run:
 
-## ✨ Features
+```bash
+ng serve
+```
 
-- 🖥️ Cross-platform support (Windows, macOS, Linux)
-- 🎮 Game metadata editing (title, compatibility mode, cover art)
-- 🎨 Automatic cover art download from online databases
-- 💾 Works with USB, SMB, MX4SIO, SD2SIO, and HDD game modes
-- 💿 Convert .bin/.cue files to OPL-compatible ISO format
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## 🐛 Bug Reports & Feature Requests
+## Code scaffolding
 
-Found a bug or have an idea? Please check existing [Issues](https://github.com/StefanAdrianNita/open-opl-toolbox/issues) first, if your bug or idea is not there you can create a new issue.
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
+```bash
+ng generate component component-name
+```
 
-## 🚧 Project Status
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-This project is currently in active development by an passionate person in his free time.   
-Don't expect regular updates. Contributions are welcome!
+```bash
+ng generate --help
+```
 
-## 🙋 FAQ
+## Building
 
-### Does this replace OPL Manager?
-Yes and no! It’s a modern, cross-platform alternative that can enable linux and macOS users to have something similar to OPL Manager but it does not aim to completly replace it. You're still free to try it and contribute!
+To build the project run:
 
-### Can I use it with my SMB/MX4SIO/USB setup?
-Yes, you can point the app to any OPL-compatible path — including network shares.
+```bash
+ng build
+```
 
-## 🙏 Acknowledgments
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-- The [Open PS2 Loader](https://github.com/ps2homebrew/Open-PS2-Loader) team
-- Original OPL Manager developers
-- Cover art providers and game databases
-- All contributors and testers
+## Running unit tests
 
-**Disclaimer**: This tool is not affiliated with Sony or the PS2 homebrew scene officially. Use at your own discretion.
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
