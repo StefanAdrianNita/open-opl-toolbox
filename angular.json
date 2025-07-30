@@ -26,10 +26,12 @@
             "tsConfig": "projects/open-opl-toolbox/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "projects/open-opl-toolbox/src/assets",
               {
                 "glob": "**/*",
                 "input": "projects/open-opl-toolbox/public"
               }
+              
             ],
             "styles": [
               "projects/open-opl-toolbox/src/styles.scss"
